@@ -2015,9 +2015,7 @@ name = "monolithic_integration_test"
 version = "0.1.0"
 dependencies = [
  "backoff",
- "chrono",
  "daphne",
- "deadpool-postgres",
  "futures",
  "hex",
  "hpke-dispatch",
@@ -2026,6 +2024,8 @@ dependencies = [
  "janus_client",
  "janus_core",
  "janus_server",
+ "k8s-openapi",
+ "kube",
  "lazy_static",
  "monolithic_integration_test",
  "nix",
@@ -2041,7 +2041,6 @@ dependencies = [
  "tempfile",
  "testcontainers",
  "tokio",
- "tokio-postgres",
  "toml",
  "tracing",
  "url",
