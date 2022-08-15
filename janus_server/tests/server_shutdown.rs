@@ -76,13 +76,7 @@ async fn server_shutdown() {
 
     let task_id = TaskId::random();
     let task = new_dummy_task(task_id, VdafInstance::Prio3Aes128Count.into(), Role::Leader);
-    datastore
-        .run_tx(|tx| {
-            let task = task.clone();
-            Box::pin(async move { tx.put_task(&task).await })
-        })
-        .await
-        .unwrap();
+    datastore.put_task(&task).await.unwrap();
 
     // Save the above configuration to a temporary file, so that we can pass
     // the file's path to the aggregator on the command line.
