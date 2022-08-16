@@ -232,11 +232,11 @@ impl Task {
         if aggregator_auth_tokens.is_empty() {
             return Err(Error::InvalidParameter("aggregator_auth_tokens"));
         }
-        if (role == Role::Leader) == (collector_auth_tokens.is_empty()) {
-            // Collector auth tokens are allowed & required if and only if this task is in the
-            // leader role.
-            return Err(Error::InvalidParameter("collector_auth_tokens"));
-        }
+        // if (role == Role::Leader) == (collector_auth_tokens.is_empty()) {
+        //     // Collector auth tokens are allowed & required if and only if this task is in the
+        //     // leader role.
+        //     return Err(Error::InvalidParameter("collector_auth_tokens"));
+        // }
         if vdaf_verify_keys.is_empty() {
             return Err(Error::InvalidParameter("vdaf_verify_keys"));
         }
